@@ -12,8 +12,8 @@ findJudge = re.compile(r'<span>(\d*)人评价</span>')
 findInq = re.compile(r'<span class="inq">(.*)</span>')
 findBd = re.compile(r'<p class="">(.*?)</p>', re.S)
 
-findNames = re.compile(r'<a class="playBtn" data-cn="(.*?)">')
-findLinks = re.compile(r'<a.*href="(.*?)">')
+findNames = re.compile(r'<a class="playBtn".*data-cn="(.*?)".*>')
+findLinks = re.compile(r'<a.*href="(.*?)".*>')
 
 
 
@@ -125,7 +125,8 @@ def saveData(datalist,savepath):
 
 if __name__ == "__main__":  # 当程序执行时
     # 调用函数
-     main()
+    main()
+    getPlayer("https://movie.douban.com/subject/1292052/")
     # init_db("movietest.db")
-     print("爬取完毕！")
+    print("爬取完毕！")
 
